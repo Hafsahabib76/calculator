@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+	<link rel="stylesheet" href="cal.css">
+
+</head>
+<body>
+
+
+<div class="container cen">
+    <!--Heading-->
+    <h2 style="font-family: Helvetica; font-weight: bold; color: white;
+    font-size: 40px;">CALCULATOR</h2>
+
+    <!--Form is used to take input and shown the output-->
+    <form name="form" class="well calbox col-xs-12  col-sm-offset-4 col-sm-12  col-md-offset-3 col-md-6  col-lg-offset-3 col-lg-6">
+
+        <!--Screen for showing input and output-->
+    	<input class="form-control " id="screen" name="screen" placeholder="0" disabled><br/>
+
+        <!--Button to clear all-->
+    	<input type="button" class="btn btn-circle m-1 text-white text1" id="" style="background-color: #FF8C00;" name="bttnclear" value="AC" onclick="aC();">
+        
+        <!--Button for divison-->
+        <input type="button" class="btn btn-muted btn-circle m-1 text-dark text"
+        	name="btndiv" value="/" onclick="calculate(btndiv.value);">
+        
+        <!--Button for multiplication-->
+        <input type="button" class="btn btn-muted btn-circle m-1 text-dark text"
+        	name="btnmul" value="*" onclick="calculate(btnmul.value);"
+        	style="font-size:30px; padding: 6px;">
+
+        <!--Button to cut the value or to go back-->
+        <input type="button" class="btn btn-circle m-1 text-white text1" style="background-color: #F12C3F; font-weight: bold;" 
+            name="btncut" value="C" onclick="cut(btncut.value);">
+        
+        
+
+        <br>
+        <!--Button 7-->
+        <input type="button" class="btn btn-muted btn-circle m-1 text-dark text" style="background-color: #E5E4E5;" name="btn7" value="7" 
+        	onclick="calculate(btn7.value);">
+
+        <!--Button 8-->
+        <input type="button" class="btn btn-muted btn-circle m-1 text-dark text" style="background-color: #E5E4E5;" name="btn8" value="8" 
+        	onclick="calculate(btn8.value);">
+
+        <!--Button 9-->
+        <input type="button" class="btn btn-muted btn-circle m-1 text-dark text" style="background-color: #E5E4E5;" name="btn9" value="9" 
+        	onclick="calculate(btn9.value);">
+
+        <!--Button for Percentage-->
+        <input type="button" class="btn btn-muted btn-circle m-1 text-dark text"
+        	name="btnper" value="%" 
+        	onclick="calculate(btnper.value);"> 
+       
+        
+
+        <br>
+        <!--Button 4-->
+        <input type="button" class="btn btn-muted btn-circle m-1 text-dark text" style="background-color: #E5E4E5;" name="btn4" value="4" 
+        	onclick="calculate(btn4.value);">
+
+        <!--Button 5-->
+        <input type="button" class="btn btn-muted btn-circle m-1 text-dark text" style="background-color: #E5E4E5;" name="btn5" value="5" 
+        	onclick="calculate(btn5.value);">
+
+        <!--Button 6-->
+        <input type="button" class="btn btn-muted btn-circle m-1 text-dark text" style="background-color: #E5E4E5;" name="btn6" value="6" 
+        	onclick="calculate(btn6.value);">
+
+        <!--Button for subtraction-->
+        <input type="button" class="btn btn-muted btn-circle m-1 text-dark text" 
+        	name="btnsub" value="-" onclick="calculate(btnsub.value);">
+
+
+        
+
+        <br>
+        <!--Button 1-->
+        <input type="button" class="btn btn-muted btn-circle m-1 text-dark text" style="background-color: #E5E4E5;" name="btn1" value="1" 
+        	onclick="calculate(btn1.value);">
+
+        <!--Button 2-->
+        <input type="button" class="btn btn-muted btn-circle m-1 text-dark text" style="background-color: #E5E4E5;" name="btn2" value="2" 
+        	onclick="calculate(btn2.value);">
+
+        <!--Button 3-->
+        <input type="button" class="btn btn-muted btn-circle m-1 text-dark text" style="background-color: #E5E4E5;" name="btn3" value="3" 
+        	onclick="calculate(btn3.value);">
+
+        <!--Button for Addition-->
+        <input type="button" class="btn btn-muted btn-circle m-1 text-dark text"
+        	name="btnadd" value="+" onclick="calculate(btnadd.value);">
+
+
+        
+
+        <br>
+        <!--Button 0-->
+        <input type="button" class="btn btn-muted btn-circle m-1 text-dark text" style="background-color: #E5E4E5;" name="btn0" value="0" 
+        	onclick="calculate(btn0.value);">
+
+        <!--Button 00-->
+        <input type="button" class="btn btn-muted btn-circle m-1 text-dark text" style="background-color: #E5E4E5;" name="btn00" value="00" 
+        	onclick="calculate(btn00.value);">
+
+        <!--Button for dot or point-->
+       <input type="button" class="btn btn-muted btn-circle m-1 text-dark text" style="background-color: #E5E4E5;" name="btndot" value="." 
+            onclick="calculate(btndot.value);">
+        
+        <!--Button for Equals To-->         
+        <input type="button" class="btn btn-circle m-1 text-white text1" style="background-color: green;" name="btneql" value="=" 
+        	onclick="screen.value=eval(screen.value);">
+
+    </form>
+
+</div>
+
+
+
+    <script>
+
+    	function calculate(c){
+    		form.screen.value = form.screen.value + c;
+    	}
+
+        function aC() {
+            form.screen.value = "";
+        }
+
+        function cut(){
+            var value = document.getElementById("screen").value;
+            document.getElementById("screen").value = value.substr(0, value.length - 1);
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+body{
+	font-family: sans-serif;
+	background-image: url(https://www.desktopbackground.org/download/1440x900/2012/07/29/428646_pic-new-posts-math-wallpapers-desktop_1600x900_h.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+.cen{
+	margin-top: 2%;
+}
+
+/*Button Styling */
+.btn-circle {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  padding: 0;
+  border-radius: 50%;
+  border: 0.4px solid black;
+
+}
+
+/*Button Text Styling */
+.text1{
+	font-size: 20px;
+	color: white;	
+}
+
+.text{
+	font-size: 20px;
+}
+
+
+/*Screen where all the input & outputs are shown*/
+#screen {
+    text-align: right;
+    width: 230px;
+    height: 50px;
+    font-size: 26px;
+    background-color: white;
+    border: none;
+}
+
+#screen:hover {
+    cursor: col-resize;
+}
+
+/*Calculator Box*/  
+.calbox {
+  
+    margin-left: 0;
+    margin-top: 30px;
+    width: 275px;
+    border-radius: 12pt; 
+    border: 1.1px solid black;
+    background-color: black;
+    padding: 20px;
+
+}
